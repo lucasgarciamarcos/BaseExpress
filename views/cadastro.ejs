@@ -1,0 +1,27 @@
+<body>
+    <div class="jumbotron">
+        <% if(typeof(response) == 'undefined'){ %>
+            <form action="/cadastro" method="post">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Descricao da Enquete" name="descricao" required/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit">Salvar Enquete</button>
+                    </div>
+                </div>
+            </form>
+        <% } else { %>
+            <form action="/cadastro/<%= id %>" method="post">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Descricao da Enquete" name="descricao" value="<%= response.descricao %>" required/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit">Salvar Enquete</button>
+                    </div>
+                </div>
+            </form>
+        <% } %>
+    </div>
+</body>

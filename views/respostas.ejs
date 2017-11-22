@@ -1,0 +1,24 @@
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>Enquete: <%= response.descricao %></h3>
+        </div>
+        <div class="container">
+            <ul class="list-group">
+            <% response.respostas.forEach(function(resposta){ %>
+                <li class="list-group-item justify-content-between">
+                    <%= resposta.descricao %>
+                    <span class="badge badge-info badge-pill float-right"><%= moment(new Date(resposta.datahora)).format(shortFormat) %></span>
+                </li>
+            <% }); %>
+            </ul>
+        </div>
+        <br>
+        <div class="container">
+            <form action="/enquete/<%= id %>" id="formResposta" method="POST">
+                <textarea rows="4" cols="50" name="descricao" form="formResposta" placeholder="Escreva sua Resposta"></textarea>
+                <br>
+                <button type="submit" class="btn btn-info">Salvar Resposta</button>
+            </form>
+        </div>
+</body>

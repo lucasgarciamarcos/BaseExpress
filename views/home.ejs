@@ -1,0 +1,44 @@
+<body>
+    <div>
+        <div class="container">
+            <br>
+            <h1 class="text-info text-center">Enquetes</h1>
+            <br>
+            <table class="table table-hover">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Data</th>
+                        <th>Respostas</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% response.forEach(function(enquete) { %>
+                        <tr>
+                            <td>
+                                <a href="cadastro/<%= enquete._id %>">
+                                    <%= enquete.descricao %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= moment(new Date(enquete.datahora)).format(shortFormat) %>
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="enquete/<%= enquete._id %>">Responder</a>
+                            </td>
+                            <td>
+                                <form action="/delete/<%= enquete._id %>" method="post">
+                                    <button type="submit" class="btn btn-danger">Remover</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <a class="btn btn-info" href="/cadastro">Nova Enquete</a>
+        </div>
+    </div>
+</body>

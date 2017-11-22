@@ -1,0 +1,21 @@
+{
+  "name": "enquetes",
+  "version": "1.0.0",
+  "description": "enquetesWeb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Marcos",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
+    "moment": "^2.19.2",
+    "mongoose": "^4.12.5",
+    "morgan": "^1.9.0"
+  }
+}
